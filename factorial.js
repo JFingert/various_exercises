@@ -8,7 +8,6 @@ function factorializer(num) {
 	return product;
 }
 
-
 var answer = prompt("Enter ye number to find its factorial");
 	
 factorializer(answer);
