@@ -1,13 +1,32 @@
-function factorializer(num) { 
+var read = require('read');
 
-	product = 1;
+// function factorializer(num) { 
 
-	for (var i = 2; i <= num; i++){
+// 	product = 1;
+
+// 	for (var i = 2; i <= num; i++){
+// 		product *= i;
+// 	}
+// 	return product;
+// }
+
+//var answer = prompt("Enter ye number to find its factorial");
+read({ prompt: 'Enter Number.\n(enter \'exit\' to exit): '}, function factorializer (err, result) {
+
+	var product = 1;
+
+
+	if (result === "exit"){
+		process.exit();
+	}
+
+
+	for (var i = 2; i <= result; i++){
 		product *= i;
 	}
-	return product;
-}
+	console.log(product);
 
-var answer = prompt("Enter ye number to find its factorial");
-	
-factorializer(answer);
+	read({ prompt: 'Enter Number.\n(enter \'exit\' to exit): '}, factorializer);
+});
+
+//factorializer(answer);
